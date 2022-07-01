@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
-        <img src="_tmp/vt-logo-noborder.svg" height="100px">
+        <img src="_tmp/logo.svg" height="100px">
     </a>
     <h1 align="center">VT-Admin 服务端模板</h1>
     <br>
