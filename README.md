@@ -1,4 +1,4 @@
-<p style="text-align: center">
+<p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="_tmp/vt-logo-noborder.svg" height="100px">
     </a>
@@ -16,9 +16,11 @@
 cp .env.docker .env
 ```
 
+
 **修改配置**
 
 将 `.env` 中出现的配置换成自己的实际参数，默认不用改
+
 
 **启动**
 
@@ -27,6 +29,7 @@ cp .env.docker .env
 ```bash
 docker-compose up -d
 ```
+
 
 **导入SQL**
 
@@ -41,9 +44,11 @@ docker-compose up -d
 
 连接成功后请新建一个编码为 `utf8mb4` 名为 `vt-admin` 的数据库，然将 `_tmp/init.sql` 中的内容用数据库管理工具运行一下
 
+
 **浏览**
 
 打开 [http://127.0.0.1:50080](http://127.0.0.1:50080) 
+
 
 ## 非Docker下使用
 
@@ -52,9 +57,11 @@ docker-compose up -d
 
 **安装依赖**
 
+
 ```bash
 php composer.phar install -v
 ```
+
 
 **复制配置**
 
@@ -62,9 +69,11 @@ php composer.phar install -v
 cp .env.example .env
 ```
 
+
 **修改配置**
 
 将 `.env` 中出现的配置换成自己的实际参数
+
 
 **导入SQL**
 
