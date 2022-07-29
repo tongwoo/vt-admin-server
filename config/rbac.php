@@ -1,5 +1,5 @@
 <?php
-$rbacItems = require_once '../rbac/items.php';
+$rbacItems = require_once __DIR__.'/../rbac/items.php';
 $rbacRoleNames = [];
 foreach ($rbacItems as $name => $rbacItem) {
     if ($rbacItem['type'] === 1) {
