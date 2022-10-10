@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\behaviors\HttpBearerBehavior;
 use app\behaviors\PermissionBehavior;
+use yii\filters\RateLimiter;
 use yii\web\Controller;
 
 /**
@@ -26,6 +27,10 @@ class BaseController extends Controller
         //权限检查
         $behaviors['permission'] = [
             'class' => PermissionBehavior::class,
+        ];
+        //速率限制
+        $behaviors['limit'] = [
+            'class' => RateLimiter::class,
         ];
         return $behaviors;
     }

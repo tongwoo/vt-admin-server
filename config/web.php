@@ -56,6 +56,9 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
         ],
+        'memory' => [
+            'class' => 'app\common\utils\RedisConnection',
+        ]
     ],
     'params' => $params,
 ];

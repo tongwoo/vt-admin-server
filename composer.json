@@ -27,7 +27,9 @@
         "phpoffice/phpspreadsheet": "^1.18",
         "mjaschen/phpgeo": "^3.2",
         "ext-bcmath": "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-redis": "*",
+        "yiisoft/yii2-redis": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

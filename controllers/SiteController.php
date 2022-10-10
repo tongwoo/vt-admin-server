@@ -10,19 +10,8 @@ use yii\web\Response;
 /**
  * 默认控制器
  */
-class SiteController extends BaseController
+class SiteController extends Controller
 {
-    /**
-     * @inheritDoc
-     */
-    public function getLoginOptional(): array
-    {
-        return [
-            'index',
-            'error'
-        ];
-    }
-
     /**
      * 默认Action
      */

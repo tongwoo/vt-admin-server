@@ -9,8 +9,12 @@ use DateInterval;
 use DateTime;
 use Exception;
 use Yii;
+use yii\base\Action;
 use yii\db\ActiveQuery;
+use yii\filters\RateLimitInterface;
+use yii\redis\Connection;
 use yii\web\IdentityInterface;
+use yii\web\Request;
 
 /**
  * 用户
@@ -19,7 +23,7 @@ use yii\web\IdentityInterface;
  * @property string          $stateName      状态名称
  * @property Permission[]    $permissions    权限列表
  */
-class User extends BaseUser implements IdentityInterface
+class User extends BaseUser implements IdentityInterface, RateLimitInterface
 {
     /**
      * 规则
@@ -233,6 +237,52 @@ class User extends BaseUser implements IdentityInterface
     {
         return false;
     }
+
+    /**
+     * 获得限制速率
+     * @param Request $request
+     * @param Action  $action
+     * @return int[]
+     */
+    public function getRateLimit($request, $action)
+    {
+        return [3, 1];
+    }
+
+    /**
+     * @param Request $request
+     * @param Action  $action
+     */
+    public function loadAllowance($request, $action): array
+    {
+        /** @var \Redis $redis */
+        $redis = Yii::$app->memory->redis;
+        $key = 'rate-limit:' . $this->id;
+        $data = $redis->hGetAll($key);
+        if (!$data) {
+            return [3, 0];
+        }
+        return [$data['allowance'], $data['timestamp']];
+    }
+
+    /**
+     * @param Request $request
+     * @param Action  $action
+     * @param int     $allowance
+     * @param int     $timestamp
+     * @return void
+     */
+    public function saveAllowance($request, $action, $allowance, $timestamp)
+    {
+        /** @var \Redis $redis */
+        $redis = Yii::$app->memory->redis;
+        $key = 'rate-limit:' . $this->id;
+        $redis->hMSet($key, [
+            'allowance' => $allowance,
+            'timestamp' => $timestamp
+        ]);
+    }
+
 
     /**
      * 获得拥有的权限列表（已去重）

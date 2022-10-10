@@ -8,4 +8,4 @@ use yii\helpers\Html;
 
 //$this->title = $name;
 ?>
-<h2><?=$message?></h2>
+<?=$message?>
