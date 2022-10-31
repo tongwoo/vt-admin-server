@@ -88,4 +88,13 @@ class UserController extends BaseController
         $ids = $this->request->post('ids');
         return $this->service->delete($ids)->asJsonResponse();
     }
+
+    /**
+     * 修改密码
+     * @return Response
+     */
+    public function actionUpdatePassword()
+    {
+        return Result::success()->asJsonResponse();
+    }
 }

@@ -5,31 +5,13 @@ return [
         'type' => 1,
         'description' => '管理员',
         'children' => [
-            'role',
-            'role_create',
-            'role_read',
-            'role_update',
-            'role_delete',
             'user',
-            'user_create',
             'user_read',
-            'user_update',
-            'user_delete',
             'permission',
             'permission_create',
             'permission_read',
             'permission_update',
             'permission_delete',
-            'route',
-            'route_create',
-            'route_read',
-            'route_update',
-            'route_delete',
-            'sdgdf',
-            'sdgdf_create',
-            'sdgdf_read',
-            'sdgdf_update',
-            'sdgdf_delete',
         ],
     ],
     'model-builder' => [
@@ -39,6 +21,14 @@ return [
     'gm' => [
         'type' => 1,
         'description' => '游戏管理员',
+        'children' => [
+            'aaaaaaaaaaaa',
+            'vvvvvvvv',
+            'vvvvvvvv_create',
+            'vvvvvvvv_read',
+            'vvvvvvvv_update',
+            'vvvvvvvv_delete',
+        ],
     ],
     'service' => [
         'type' => 1,
@@ -96,10 +86,6 @@ return [
     'role' => [
         'type' => 2,
         'description' => '角色管理',
-    ],
-    'role_create' => [
-        'type' => 2,
-        'description' => '创建角色',
     ],
     'role_read' => [
         'type' => 2,
@@ -176,5 +162,33 @@ return [
     'sdgdf_delete' => [
         'type' => 2,
         'description' => '删除fgf',
+    ],
+    1 => [
+        'type' => 2,
+        'description' => '2',
+    ],
+    'aaaaaaaaaaaa' => [
+        'type' => 2,
+        'description' => 'ddddddddddd',
+    ],
+    'vvvvvvvv' => [
+        'type' => 2,
+        'description' => 'ccccccc',
+    ],
+    'vvvvvvvv_create' => [
+        'type' => 2,
+        'description' => '创建ccccccc',
+    ],
+    'vvvvvvvv_read' => [
+        'type' => 2,
+        'description' => '查看ccccccc',
+    ],
+    'vvvvvvvv_update' => [
+        'type' => 2,
+        'description' => '修改ccccccc',
+    ],
+    'vvvvvvvv_delete' => [
+        'type' => 2,
+        'description' => '删除ccccccc',
     ],
 ];

@@ -246,7 +246,7 @@ class User extends BaseUser implements IdentityInterface, RateLimitInterface
      */
     public function getRateLimit($request, $action)
     {
-        return [3, 1];
+        return [5, 1];
     }
 
     /**

@@ -65,6 +65,15 @@ class Permission extends BasePermission
                 'strict' => false,
                 'max' => 50
             ],
+            [
+                'rule_name',
+                function ($attribute) {
+                    $rule = Yii::$app->authManager->getRule($this->$attribute);
+                    if (!$rule) {
+                        $this->addError($attribute, '规则不存在');
+                    }
+                }
+            ]
         ];
     }
 
