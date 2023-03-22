@@ -85,7 +85,7 @@ class UserController extends BaseController
      */
     public function actionDelete(): Response
     {
-        $ids = $this->request->post('ids');
+        $ids = $this->request->post('id');
         return $this->service->delete($ids)->asJsonResponse();
     }
 

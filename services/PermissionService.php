@@ -166,7 +166,7 @@ class PermissionService
         $oldName = $permission->name;
         $permission->setCamelAttributes($data);
         if (!$permission->validate()) {
-            throw new UnprocessableEntityHttpException($role->validatorError);
+            throw new UnprocessableEntityHttpException($permission->validatorError);
         }
         $transaction = Yii::$app->db->beginTransaction();
         try {

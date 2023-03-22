@@ -345,6 +345,9 @@ class User extends BaseUser implements IdentityInterface, RateLimitInterface
             'token' => 'Bearer ' . $authorization->value,
             'expires' => $authorization->expiresTime,
             'permissions' => $permissions,
+            'roles' => array_map(function (Role $role) {
+                return $role->name;
+            }, $user->roles),
             'avatar' => $user->avatar ? $_ENV['ASSET_BASE_URL'] . $user->avatar : null
         ];
     }

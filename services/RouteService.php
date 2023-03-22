@@ -49,7 +49,7 @@ class RouteService
     {
         $pagination = new Pagination();
         $repo = Yii::$container->get(RouteRepository::class);
-        $query = $repo->buildCondition($params)->orderBy(['path' => \SORT_DESC]);
+        $query = $repo->buildCondition($params)->orderBy(['path' => \SORT_ASC]);
         /** @var Route[] $records */
         $records = $repo->pagination($pagination, $query)->all();
         $items = [];

@@ -29,6 +29,14 @@ class Permission extends BasePermission
                 'min' => 0,
                 'max' => 4294967295
             ],
+            [
+                'parent_id',
+                function ($attribute) {
+                    if ($this->$attribute === $this->id) {
+                        $this->addError($attribute, '父权限不能是自己');
+                    }
+                }
+            ],
             //权限名称
             [
                 'name',
