@@ -5,8 +5,23 @@ return [
         'type' => 1,
         'description' => '管理员',
         'children' => [
+            'route',
+            'route_read',
+            'sdgdf',
+            'sdgdf_read',
+            'sdgdf_update',
+        ],
+    ],
+    'model-builder' => [
+        'type' => 1,
+        'description' => '建模师',
+        'ruleName' => 'role-rule',
+        'children' => [
             'user',
+            'user_create',
             'user_read',
+            'user_update',
+            'user_delete',
             'permission',
             'permission_create',
             'permission_read',
@@ -14,20 +29,12 @@ return [
             'permission_delete',
         ],
     ],
-    'model-builder' => [
-        'type' => 1,
-        'description' => '建模师',
-    ],
     'gm' => [
         'type' => 1,
         'description' => '游戏管理员',
         'children' => [
             'aaaaaaaaaaaa',
             'vvvvvvvv',
-            'vvvvvvvv_create',
-            'vvvvvvvv_read',
-            'vvvvvvvv_update',
-            'vvvvvvvv_delete',
         ],
     ],
     'service' => [
@@ -46,25 +53,10 @@ return [
     'saler' => [
         'type' => 1,
         'description' => '销售',
+        'ruleName' => 'role-rule',
         'children' => [
-            'user',
-            'user_update',
-            'user_delete',
-            'permission',
-            'permission_create',
-            'permission_read',
-            'permission_update',
-            'permission_delete',
-        ],
-    ],
-    'heshang' => [
-        'type' => 1,
-        'description' => '扫地僧',
-        'children' => [
-            'permission',
-            'permission_create',
-            'permission_read',
-            'permission_update',
+            'aaaaaaaaaaaa',
+            'vvvvvvvv',
         ],
     ],
     'user_create' => [
@@ -163,10 +155,6 @@ return [
         'type' => 2,
         'description' => '删除fgf',
     ],
-    1 => [
-        'type' => 2,
-        'description' => '2',
-    ],
     'aaaaaaaaaaaa' => [
         'type' => 2,
         'description' => 'ddddddddddd',
@@ -175,20 +163,8 @@ return [
         'type' => 2,
         'description' => 'ccccccc',
     ],
-    'vvvvvvvv_create' => [
+    '胜多负少的' => [
         'type' => 2,
-        'description' => '创建ccccccc',
-    ],
-    'vvvvvvvv_read' => [
-        'type' => 2,
-        'description' => '查看ccccccc',
-    ],
-    'vvvvvvvv_update' => [
-        'type' => 2,
-        'description' => '修改ccccccc',
-    ],
-    'vvvvvvvv_delete' => [
-        'type' => 2,
-        'description' => '删除ccccccc',
+        'description' => '似懂非懂',
     ],
 ];

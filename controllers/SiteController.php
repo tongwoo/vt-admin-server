@@ -5,7 +5,9 @@ namespace app\controllers;
 use app\common\utils\Result;
 use Yii;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 use yii\web\Response;
+use yii\web\ServerErrorHttpException;
 
 /**
  * 默认控制器
